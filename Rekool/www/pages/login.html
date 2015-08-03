@@ -1,0 +1,31 @@
+
+
+<ion-view view-title="Login" hide-nav-bar="true">
+    
+        <ion-content class="padding" >
+
+<div ng-controller="loginController">
+    
+	<form>
+            <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: 250px; background-color: rgb(255, 255, 255);">
+                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div>
+            <div class="spacer" style="width: 300px; height: 22px;"></div>
+            <ion-list>
+                <label class="item item-input" name="email">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" placeholder="" maxlength="150">
+                </label>
+                <label class="item item-input" name="senha">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="" maxlength="10">
+                </label>
+            </ion-list>
+            <div class="spacer" style="width: 300px; height: 21px;"></div>
+            <button class="button button-positive button-block  icon-right ion-ios7-locked">Entrar</button>
+            <a href="#/cadastro" class="button button-positive button-clear button-block ">Ou Cadastre-se</a>
+        </form>
+	</div>
+    
+    </ion-content>
+    </ion-view>

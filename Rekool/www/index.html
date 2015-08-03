@@ -19,33 +19,14 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
+    <script src="js/rekool.js"></script>
   </head>
-  <body ng-app="starter">
-
-    <ion-pane>
-      
-     <ion-content padding="true">
-        <form>
-            <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: 250px; background-color: rgb(255, 255, 255);">
-                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-            </div>
-            <div class="spacer" style="width: 300px; height: 22px;"></div>
-            <ion-list>
-                <label class="item item-input" name="email">
-                    <span class="input-label">E-mail</span>
-                    <input type="email" placeholder="">
-                </label>
-                <label class="item item-input" name="senha">
-                    <span class="input-label">Senha</span>
-                    <input type="password" placeholder="">
-                </label>
-            </ion-list>
-            <div class="spacer" style="width: 300px; height: 21px;"></div>
-            <button class="button button-positive button-block  icon-right ion-ios7-locked">Entrar</button>
-            <a href="#/signup" class="button button-positive button-clear button-block ">Ou Cadastre-se</a>
-        </form>
-    </ion-content>
-    </ion-pane>
+  <body ng-app="rekoolapp">
+<ion-nav-bar>
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Voltar
+  </ion-nav-back-button>
+  </ion-nav-bar>
+     <ion-nav-view></ion-nav-view>
   </body>
 </html>
