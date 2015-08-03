@@ -1,0 +1,26 @@
+.item-input {
+    padding: 10px 0 5px 10px;
+    color: #444444 !important;
+}
+
+.input-label {
+    color: #808080 !important;
+    font-size: 12px !important;
+}
+
+.button {
+    font-size: 14px;
+}
+
+.list >.item{
+   border-width:0px;
+}
+
+.list >.item:first-child{
+    border-bottom-width:1px;
+    z-index:3;
+}
+
+.list >.item:last-child{
+    border-bottom-width:1px;
+}
