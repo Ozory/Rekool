@@ -1,5 +1,6 @@
 var rekoolapp = angular.module('rekoolapp', ['ionic']);
 
+//#region CONFIGURATION
 
 rekoolapp.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -13,6 +14,8 @@ rekoolapp.run(function ($ionicPlatform) {
         }
     });
 });
+
+//#endregion
 
 rekoolapp.config(function ($stateProvider, $urlRouterProvider) {
 
