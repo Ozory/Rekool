@@ -13,14 +13,12 @@
 }
 
 .list >.item{
-   border-width:0px;
+     border-width:0px;
+    border-bottom-width:1px;
+    margin:1px;
 }
 
-.list >.item:first-child{
-    border-bottom-width:1px;
-    z-index:3;
-}
-
-.list >.item:last-child{
-    border-bottom-width:1px;
+input[type="password"]{
+    color:red;
+    font-size: 30px;
 }

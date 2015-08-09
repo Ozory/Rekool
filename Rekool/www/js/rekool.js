@@ -20,23 +20,35 @@ rekoolapp.run(function ($ionicPlatform) {
 rekoolapp.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('login', {
-          url: "/login",
-          templateUrl: "pages/login.html"
-      })
-      .state('cadastro', {
-          url: "/cadastro",
-          templateUrl: "pages/cadastro.html"
-      });
+        .state('login', {
+            url: "/login",
+            templateUrl: "pages/login.html"
+        })
+        .state('cadastro', {
+            url: "/cadastro",
+            templateUrl: "pages/cadastro.html"
+        });
 
     $urlRouterProvider.otherwise("/login");
 
 });
 
-rekoolapp.controller('loginController', function ($scope) {
-   // console.log("teste de Login");
+
+
+rekoolapp.controller('loginController', function ($scope, Alerta) {
+
+    $scope.Login = {
+        email: "",
+        senha: ""
+    }
+
+    $scope.ValidateLogin = function () {
+        if ($scope.Login.email == "" || $scope.Login.senha == "") {
+              Alerta.Erro("Email ou senha sao obrigatorios");
+        }
+    }
 });
 
-rekoolapp.controller('cadastroController', function ($scope) {
-    //console.log("teste de cadastro");
+rekoolapp.controller('cadastroController', function ($scope, Alerta) {
+
 });
