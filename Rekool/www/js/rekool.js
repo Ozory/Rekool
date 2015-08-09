@@ -31,7 +31,7 @@ rekoolapp.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/login");
 
-})
+});
 
 rekoolapp.controller('loginController', function ($scope) {
    // console.log("teste de Login");
