@@ -1,3 +1,5 @@
+// Alertas
+
 rekoolapp.service('Alerta', function($ionicPopup){
     
     // Alerta padrao
