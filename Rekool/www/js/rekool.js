@@ -59,7 +59,12 @@ rekoolapp.config(function ($stateProvider, $urlRouterProvider) {
 
 
 
-rekoolapp.controller('loginController', function ($scope, Alerta) {
+rekoolapp.controller('loginController', function (
+    $scope, 
+    $window, 
+    Alerta, 
+    UserServices,
+    Loading) {
 
     $scope.Login = {
         email: "",
@@ -69,12 +74,57 @@ rekoolapp.controller('loginController', function ($scope, Alerta) {
     $scope.ValidateLogin = function () {
         if ($scope.Login.email == "" || $scope.Login.senha == "") {
             Alerta.Erro("Email e senha são obrigatórios");
+            return false;
         }
+        return true;
     };
     
     $scope.Logar = function(){
         
+        // Logar usuário
+        if($scope.ValidateLogin()==true){
+            
+            Loading.Show();
+            var User = {
+                    "email":$scope.Login.email, 
+                    "password":$scope.Login.senha
+                };
+                
+            UserServices.Login (
+                User,
+                $scope.Success,
+                $scope.Error
+            );
+        }
+
     };
+    
+    // Sucesso ao Logar
+        $scope.Success =function(data){
+             localStorage.setItem('user', data.data);
+             Loading.Release();
+             //Redirect
+             $scope.RedirectToHome();
+        }
+        
+        // Erro ao Logar usuário
+        $scope.Error =function(data){
+             Loading.Release();
+            Alerta.Erro("Usuário não encontrado");
+        }
+    
+    $scope.RedirectToHome = function(){
+        $window.location.assign('/#/tab/home');
+    }
+    
+    $scope.Init = function(){
+        if(UserServices.ValidateUser()===true){
+            $scope.RedirectToHome();
+            
+        }
+    }
+    
+    $scope.Init();
 });
 
 rekoolapp.controller('cadastroController', function ($scope, Alerta) {
