@@ -70,7 +70,11 @@ rekoolapp.controller('loginController', function ($scope, Alerta) {
         if ($scope.Login.email == "" || $scope.Login.senha == "") {
             Alerta.Erro("Email e senha são obrigatórios");
         }
-    }
+    };
+    
+    $scope.Logar = function(){
+        
+    };
 });
 
 rekoolapp.controller('cadastroController', function ($scope, Alerta) {
