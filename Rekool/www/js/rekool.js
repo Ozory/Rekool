@@ -114,7 +114,7 @@ rekoolapp.controller('loginController', function (
         }
     
     $scope.RedirectToHome = function(){
-        $window.location.assign('/#/tab/home');
+        $window.location.assign('#/tab/home');
     }
     
     $scope.Init = function(){
